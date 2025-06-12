@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怡保英文基础班 | 告别“听不懂”，自信说英文！</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm & Professional Green -->
+    <!-- Application Structure Plan: A single-page application with a clear vertical flow. The structure starts with a strong Hero section to capture attention and deliver the core value proposition. It's followed by sections addressing parent's pain points, detailing the distinct programs (Primary vs. Secondary) with an interactive toggle, highlighting key advantages, showcasing testimonials, explaining the enrollment process, and ending with a strong call-to-action. This structure is designed to build trust sequentially and guide the user logically from initial interest to conversion (booking a trial class), making it more engaging and effective than a static flyer. -->
+    <!-- Visualization & Content Choices: Report Info: Primary vs. Secondary programs -> Goal: Compare -> Viz/Presentation: Interactive Toggle -> Interaction: JS-powered content switching -> Justification: Allows users to focus on the age group relevant to them, reducing clutter and improving user experience. | Report Info: Key advantages (small class, etc.) -> Goal: Organize -> Viz/Presentation: Icon-based cards in a grid -> Interaction: CSS hover effects -> Justification: Visually breaks down key features for quick scanning and easy digestion. | Report Info: Enrollment process -> Goal: Organize -> Viz/Presentation: Numbered step-flow diagram -> Interaction: Static visual flow -> Justification: Clearly and simply explains the customer journey. All icons are Unicode characters. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#dbeafe 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+        .active-tab {
+            background-color: #059669; /* emerald-600 */
+            color: white;
+        }
+        .inactive-tab {
+            background-color: #e5e7eb; /* gray-200 */
+            color: #374151; /* gray-700 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-emerald-600">
+                    怡保英文基础班
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-emerald-600">课程特色</a>
+                    <a href="#programs" class="text-gray-600 hover:text-emerald-600">课程详情</a>
+                    <a href="#process" class="text-gray-600 hover:text-emerald-600">报名流程</a>
+                    <a href="#contact" class="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                        预约免费试课
+                    </a>
+                </nav>
+                <div class="md:hidden">
+                     <a href="#contact" class="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                        立即预约
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-white bg-pattern">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
+                    孩子英文“听不懂”？<br class="hidden md:block">
+                    <span class="text-emerald-600">告别困境，在怡保自信开口！</span>
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-600">
+                    我们专为怡保学子设计，通过5人精品小班和趣味化教学，系统性提升词汇、语法和造句能力，彻底解决孩子在校英文听不懂、跟不上的难题。
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#contact" class="bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-emerald-700 transition-transform hover:scale-105">
+                        预约免费水平测试
+                    </a>
+                    <a href="#programs" class="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold text-lg border border-emerald-600 hover:bg-emerald-50 transition-transform hover:scale-105">
+                        了解课程详情
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain Points Section -->
+        <section class="bg-slate-50 py-16 sm:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">您的孩子是否正面临这些困境？</h2>
+                    <p class="mt-4 text-lg text-slate-600">我们理解家长们的担忧，并提供专业的解决方案。</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-semibold text-slate-900">🤯 学校英文听不懂</h3>
+                        <p class="mt-2 text-slate-600">老师语速快，内容多，孩子跟不上进度，逐渐失去信心。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-semibold text-slate-900">🤔 词汇语法根基不稳</h3>
+                        <p class="mt-2 text-slate-600">词汇量少，语法概念模糊，导致阅读和写作都举步维艰。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-semibold text-slate-900">😥 面对英文缺乏兴趣</h3>
+                        <p class="mt-2 text-slate-600">因听不懂、不会用而感到挫败，对英文学习产生抵触情绪。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="bg-emerald-50 py-16 sm:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">我们如何帮助您的孩子</h2>
+                    <p class="mt-4 text-lg text-slate-600">独特的教学优势，带来显著的学习效果。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center p-6 bg-white rounded-lg shadow">
+                        <span class="text-4xl">🧑‍🤝‍🧑</span>
+                        <h3 class="mt-4 text-xl font-bold">5人精品小班</h3>
+                        <p class="mt-2 text-slate-600">超高师生比，确保老师关注到每个孩子，因材施教。</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-lg shadow">
+                        <span class="text-4xl">🎯</span>
+                        <h3 class="mt-4 text-xl font-bold">系统提升能力</h3>
+                        <p class="mt-2 text-slate-600">专注词汇、语法、造句三大核心，稳固英文根基。</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-lg shadow">
+                        <span class="text-4xl">👧👦</span>
+                        <h3 class="mt-4 text-xl font-bold">分龄定制课程</h3>
+                        <p class="mt-2 text-slate-600">小学组趣味启蒙，中学组系统进阶，教学更精准。</p>
+                    </div>
+                     <div class="text-center p-6 bg-white rounded-lg shadow">
+                        <span class="text-4xl">❤️</span>
+                        <h3 class="mt-4 text-xl font-bold">舒适学习环境</h3>
+                        <p class="mt-2 text-slate-600">营造轻松愉快的课堂氛围，让孩子敢于尝试，乐于表达。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Programs Section -->
+        <section id="programs" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">分龄教学，事半功倍</h2>
+                    <p class="mt-4 text-lg text-slate-600">根据不同年龄段的学习特点，我们设计了针对性的课程内容。</p>
+                </div>
+
+                <!-- Interactive Toggle -->
+                <div class="flex justify-center mb-8">
+                    <div class="flex p-1 rounded-xl bg-gray-200">
+                        <button id="tab-primary" class="w-full px-8 py-2 text-lg font-semibold rounded-lg transition-colors duration-300 active-tab">小学组</button>
+                        <button id="tab-secondary" class="w-full px-8 py-2 text-lg font-semibold rounded-lg transition-colors duration-300 inactive-tab">中学组</button>
+                    </div>
+                </div>
+
+                <!-- Content Area -->
+                <div id="content-primary" class="transition-opacity duration-500">
+                    <div class="bg-slate-50 p-8 rounded-xl grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-emerald-600">小学组 (7-12岁)</h3>
+                            <p class="mt-4 text-slate-600">此阶段的核心是 **激发兴趣** 和 **建立语感**。我们通过生动有趣的方式，让孩子在玩乐中不知不觉地爱上英文，为未来的学习打下坚实而快乐的基础。</p>
+                            <ul class="mt-6 space-y-4">
+                                <li class="flex items-start"><span class="text-emerald-500 mr-3 mt-1">✔️</span><span><strong class="text-slate-700">重点：</strong>掌握基础词汇和核心句型，建立正确的发音习惯。</span></li>
+                                <li class="flex items-start"><span class="text-emerald-500 mr-3 mt-1">✔️</span><span><strong class="text-slate-700">特色：</strong>融入英文游戏、故事、歌曲和角色扮演，让课堂充满欢声笑语。</span></li>
+                                <li class="flex items-start"><span class="text-emerald-500 mr-3 mt-1">✔️</span><span><strong class="text-slate-700">目标：</strong>能听懂课堂指令，进行简单的日常对话，并能看图造出简单句子。</span></li>
+                            </ul>
+                        </div>
+                        <div class="hidden md:block">
+                            <img src="https://placehold.co/600x400/a7f3d0/1e293b?text=Fun+Learning" alt="小学生趣味学习" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-secondary" class="hidden transition-opacity duration-500">
+                     <div class="bg-slate-50 p-8 rounded-xl grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-emerald-600">中学组 (13-17岁)</h3>
+                            <p class="mt-4 text-slate-600">此阶段注重 **系统梳理** 和 **能力提升**。我们帮助学生理清复杂的语法脉络，拓展词汇深度，并结合学校课程，有效提升阅读理解和写作能力。</p>
+                             <ul class="mt-6 space-y-4">
+                                <li class="flex items-start"><span class="text-emerald-500 mr-3 mt-1">✔️</span><span><strong class="text-slate-700">重点：</strong>系统讲解语法时态，拓展学术词汇，学习长难句分析。</span></li>
+                                <li class="flex items-start"><span class="text-emerald-500 mr-3 mt-1">✔️</span><span><strong class="text-slate-700">特色：</strong>结合学校教学大纲，讲解应试技巧，鼓励就社会话题进行口语辩论。</span></li>
+                                <li class="flex items-start"><span class="text-emerald-500 mr-3 mt-1">✔️</span><span><strong class="text-slate-700">目标：</strong>轻松应对学校考试，自信进行英文交流，为更高阶学习打下基础。</span></li>
+                            </ul>
+                        </div>
+                         <div class="hidden md:block">
+                            <img src="https://placehold.co/600x400/6ee7b7/1e293b?text=Systematic+Growth" alt="中学生系统学习" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="bg-slate-50 py-16 sm:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">简单四步，开启进步之旅</h2>
+                     <p class="mt-4 text-lg text-slate-600">我们拥有清晰高效的报名和学习流程。</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-emerald-200 hidden md:block" aria-hidden="true"></div>
+                    <div class="space-y-12 md:space-y-0">
+                        <!-- Step 1 -->
+                        <div class="md:flex items-center md:space-x-8">
+                            <div class="md:w-1/2"></div>
+                            <div class="md:w-1/2 md:pl-8">
+                                <div class="bg-white p-6 rounded-lg shadow-lg">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 bg-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                                        <h3 class="ml-4 text-xl font-bold">免费评估</h3>
+                                    </div>
+                                    <p class="mt-2 text-slate-600">通过专业的水平测试，全面了解孩子的英文水平和学习需求。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                         <div class="md:flex items-center md:space-x-8">
+                            <div class="md:w-1/2 md:pr-8 md:text-right">
+                                <div class="bg-white p-6 rounded-lg shadow-lg">
+                                    <div class="flex items-center md:justify-end">
+                                        <h3 class="mr-4 text-xl font-bold">定制课程</h3>
+                                        <div class="flex-shrink-0 bg-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                                    </div>
+                                    <p class="mt-2 text-slate-600">根据评估结果，为孩子推荐最适合的课程组别和学习计划。</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2"></div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="md:flex items-center md:space-x-8">
+                            <div class="md:w-1/2"></div>
+                            <div class="md:w-1/2 md:pl-8">
+                                <div class="bg-white p-6 rounded-lg shadow-lg">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 bg-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                                        <h3 class="ml-4 text-xl font-bold">精品小班</h3>
+                                    </div>
+                                    <p class="mt-2 text-slate-600">在5人小班中开始学习，享受老师的全方位关注和互动式课堂。</p>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Step 4 -->
+                         <div class="md:flex items-center md:space-x-8">
+                            <div class="md:w-1/2 md:pr-8 md:text-right">
+                                <div class="bg-white p-6 rounded-lg shadow-lg">
+                                    <div class="flex items-center md:justify-end">
+                                        <h3 class="mr-4 text-xl font-bold">定期反馈</h3>
+                                         <div class="flex-shrink-0 bg-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">4</div>
+                                    </div>
+                                    <p class="mt-2 text-slate-600">老师与家长定期沟通，共同见证孩子的每一点进步。</p>
+                                </div>
+                            </div>
+                             <div class="md:w-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="bg-white py-16 sm:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">听听家长们怎么说</h2>
+                    <p class="mt-4 text-lg text-slate-600">真实的反馈是我们品质的最好证明。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-slate-50 p-8 rounded-lg">
+                        <blockquote class="text-slate-600 text-lg">
+                            "我的孩子以前一提到英文就头疼，现在她会主动听英文歌，还敢和外教老师说几句英文了，真的太感谢了！"
+                        </blockquote>
+                        <p class="mt-4 font-bold text-slate-800">— 陈女士，怡保居民</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-lg">
+                        <blockquote class="text-slate-600 text-lg">
+                            "以前学校的英文课总听不懂，来了这里老师耐心讲解，现在我不仅能听懂，还敢举手回答问题了！"
+                        </blockquote>
+                        <p class="mt-4 font-bold text-slate-800">— 李同学，怡保某中学</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / CTA Section -->
+        <section id="contact" class="bg-emerald-600">
+            <div class="max-w-4xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    <span class="block">别再犹豫，立即为孩子预约！</span>
+                </h2>
+                <p class="mt-4 text-lg leading-6 text-emerald-100">
+                    名额有限，现在就联系我们，锁定免费试课名额，迈出成功的第一步。
+                </p>
+                <div class="mt-8">
+                    <div class="bg-white rounded-lg shadow-xl p-8 max-w-lg mx-auto text-left space-y-4 text-slate-700">
+                        <p class="text-lg flex items-center space-x-2"><span class="flex items-center space-x-1">
+                            <span class="text-pink-600"> 📞</span>
+                            <strong>WhatsApp:</strong>
+                            </span> 
+                            <a href="tel:+60173691389" class="text-emerald-600 hover:underline">017-369 1389</a></p>
+                        <p class="text-lg"><strong class="w-20 inline-block">📍 地址:</strong> <span> 17, Jalan Margosa C/2, Ipoh, Perak</span></p>
+                        <p class="text-lg"><strong class="w-20 inline-block">⏱️ 时间:</strong> <span>周四与周五, 4:00 PM - 6:00 PM</span></p>
+                    </div>
+                </div>
+                 <a href="https://api.whatsapp.com/send?phone=60173691389&text=你好，我想咨询怡保英文基础班的免费试课。" target="_blank" class="mt-8 w-full inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-md shadow-sm text-base font-medium text-emerald-600 bg-white hover:bg-emerald-50 sm:w-auto">
+                    通过WhatsApp立即预约
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white">
+        <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 怡保英文基础班. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabPrimary = document.getElementById('tab-primary');
+            const tabSecondary = document.getElementById('tab-secondary');
+            const contentPrimary = document.getElementById('content-primary');
+            const contentSecondary = document.getElementById('content-secondary');
+
+            function switchTab(activeTab, inactiveTab, activeContent, inactiveContent) {
+                activeTab.classList.remove('inactive-tab');
+                activeTab.classList.add('active-tab');
+                inactiveTab.classList.remove('active-tab');
+                inactiveTab.classList.add('inactive-tab');
+
+                activeContent.classList.remove('hidden');
+                inactiveContent.classList.add('hidden');
+            }
+
+            tabPrimary.addEventListener('click', function() {
+                switchTab(tabPrimary, tabSecondary, contentPrimary, contentSecondary);
+            });
+
+            tabSecondary.addEventListener('click', function() {
+                switchTab(tabSecondary, tabPrimary, contentSecondary, contentPrimary);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                       targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                       });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
